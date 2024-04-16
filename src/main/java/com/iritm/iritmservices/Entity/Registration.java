@@ -132,9 +132,22 @@ public class Registration {
 	 @Column(name = "enabled")
      private boolean  enabled;
 	 
+	 @Column(name = "rolename")
+     private String rolename;
 	 
-	 
-	 public String getVerificationcode() {
+	 public String getRolename() {
+		return rolename;
+	}
+
+
+
+	public void setRolename(String rolename) {
+		this.rolename = rolename;
+	}
+
+
+
+	public String getVerificationcode() {
 		return verificationcode;
 	}
 

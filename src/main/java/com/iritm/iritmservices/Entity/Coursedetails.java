@@ -34,12 +34,34 @@ public class Coursedetails {
 
     @Column(name = "advertisement")
     private String advertisement;
+    
+    private String msg;
 
-    @Lob
+    public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	@Lob
     @Column(name = "file")
 	private byte[] file;
+	
+	@Lob
+    @Column(name = "file1")
+	private byte[] file1;
     
-    private String filename;
+    public byte[] getFile1() {
+		return file1;
+	}
+
+	public void setFile1(byte[] file1) {
+		this.file1 = file1;
+	}
+
+	private String filename;
 
 	public String getFilename() {
 		return filename;
@@ -80,6 +102,8 @@ public class Coursedetails {
 	public byte[] getFile() {
 		return file;
 	}
+
+	
 
 	public void setFile(byte[] file) {
 		this.file = file;
