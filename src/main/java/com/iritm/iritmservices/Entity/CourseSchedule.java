@@ -20,12 +20,23 @@ public class CourseSchedule {
     private String courseName;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    private Integer coordinatorId;
-    private Integer professorId;
+    private String coordinatorId;
+    private String professorId;
     private String msg;
+    private String courseDescription;
 
     
-    public String getMsg() {
+    public String getCourseDescription() {
+		return courseDescription;
+	}
+
+
+	public void setCourseDescription(String courseDescription) {
+		this.courseDescription = courseDescription;
+	}
+
+
+	public String getMsg() {
 		return msg;
 	}
 
@@ -95,22 +106,25 @@ public class CourseSchedule {
 	}
 
 
-	public Integer getCoordinatorId() {
+	
+
+
+	public String getCoordinatorId() {
 		return coordinatorId;
 	}
 
 
-	public void setCoordinatorId(Integer coordinatorId) {
+	public void setCoordinatorId(String coordinatorId) {
 		this.coordinatorId = coordinatorId;
 	}
 
 
-	public Integer getProfessorId() {
+	public String getProfessorId() {
 		return professorId;
 	}
 
 
-	public void setProfessorId(Integer professorId) {
+	public void setProfessorId(String professorId) {
 		this.professorId = professorId;
 	}
 

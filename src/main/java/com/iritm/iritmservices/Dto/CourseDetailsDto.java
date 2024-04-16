@@ -10,7 +10,8 @@ public class CourseDetailsDto {
 	private String coursecode;
 	private String coursedescription;
 	private String advertisement;
-	private byte[] file;
+	private byte[] file1;
+	private MultipartFile file;
 	private String filename;
 	public int getCourseid() {
 		return courseid;
@@ -42,10 +43,18 @@ public class CourseDetailsDto {
 	public void setAdvertisement(String advertisement) {
 		this.advertisement = advertisement;
 	}
-	public byte[] getFile() {
+
+	public byte[] getFile1() {
+		return file1;
+	}
+	public void setFile1(byte[] file1) {
+		this.file1 = file1;
+	}
+	
+	public MultipartFile getFile() {
 		return file;
 	}
-	public void setFile(byte[] file) {
+	public void setFile(MultipartFile file) {
 		this.file = file;
 	}
 	public String getFilename() {

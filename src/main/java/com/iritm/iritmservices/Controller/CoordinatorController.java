@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.iritm.iritmservices.Dto.RequestDto;
 import com.iritm.iritmservices.Entity.Coordinator;
 import com.iritm.iritmservices.Service.CoordinatorServices;
 
@@ -49,16 +50,17 @@ public class CoordinatorController {
 	 }
 	 
 	  @GetMapping("/getcoordinator/{id}")
-	    public ResponseEntity<Coordinator> getCoordinatorById(@PathVariable Integer id) {
-	        Optional<Coordinator> coordinator = coordinatorServices.getCoordinatorById(id);
+	    public ResponseEntity<Coordinator> getCoordinatorById(@PathVariable int id) {
+		   Optional<Coordinator> coordinator = coordinatorServices.getCoordinatorById(id);
 	        return coordinator.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
 	    }
 	  
 	  
 	  @PutMapping("/editcoordinator/{id}")
 	    public ResponseEntity<Coordinator> updateCoordinator(
-	            @PathVariable Integer id,
+	    		@PathVariable int id,
 	            @RequestBody Coordinator updatedCoordinator) {
+		   // int id= requestDto.getData();
 	        Optional<Coordinator> existingCoordinator = coordinatorServices.getCoordinatorById(id);
 	        if (existingCoordinator.isEmpty()) {
 	            return ResponseEntity.notFound().build();
@@ -78,7 +80,8 @@ public class CoordinatorController {
 }
 	  
 	  @DeleteMapping("/delcoordinator/{id}")
-	    public ResponseEntity<String> deleteCoordinator(@PathVariable Integer id) {
+	    public ResponseEntity<Coordinator> deleteCoordinator(@PathVariable int id) {
+		   
 	        Optional<Coordinator> existingCoordinator = coordinatorServices.getCoordinatorById(id);
 	        if (existingCoordinator.isEmpty()) {
 	            return ResponseEntity.notFound().build();
@@ -86,7 +89,9 @@ public class CoordinatorController {
 
 	        // Delete the coordinator
 	      String msg=  coordinatorServices.deleteCoordinator(id);
-	        return ResponseEntity.ok(msg);
+	      Coordinator coobj=new Coordinator();
+	      coobj.setMsg(msg);
+	        return ResponseEntity.ok(coobj);
 	    }
 	  
 }

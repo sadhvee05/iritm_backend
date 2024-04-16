@@ -1,14 +1,18 @@
 package com.iritm.iritmservices.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.iritm.iritmservices.Dto.CourseDetailsDto;
 import com.iritm.iritmservices.Entity.Coursedetails;
-import com.iritm.iritmservices.Entity.Registration;
+
 
 public interface CourseServices {
 	List<Coursedetails> getCourseDetails() ;
 	
-	Void saveCourseDetails(CourseDetailsDto courseDetailsDto);
+	Coursedetails saveCourseDetails(CourseDetailsDto courseDetailsDto);
+	Coursedetails saveCourseDetails1(CourseDetailsDto courseDetailsDto);
+	
+	 Optional<Coursedetails> getCourseById(Long id);
 	
 }

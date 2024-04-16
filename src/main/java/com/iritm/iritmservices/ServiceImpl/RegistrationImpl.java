@@ -48,6 +48,7 @@ public class RegistrationImpl implements RegistrationServices {
 	        String userid1 =  userid.substring(Math.max(0, userid.length() - 2));
 	        registration.setUserid(userid1.concat(result.toString()).trim());   
 	        registration.setPassword(result.toString());
+	        registration.setRolename("user");
 		     registrationRepo.save(registration);
 		    
 		    message="Your registration has been successful! Your user ID is "+registration.getUserid()+" and your password is "+registration.getPassword()+" ";
@@ -110,7 +111,7 @@ public class RegistrationImpl implements RegistrationServices {
 	    String verifyURL = siteURL + "/verify?code=" + registration.getVerificationcode();
 	    content = content.replace("[[URL]]", verifyURL);
 	    helper.setText(content, true);
-	    emailService.sendEmail("chaudhary.kailash@cris.org.in", "Please verify your registration",content );
+	    emailService.sendEmail("hpewebdev@gmail.com", "Please verify your registration",content );
 	  }
 	       
 	

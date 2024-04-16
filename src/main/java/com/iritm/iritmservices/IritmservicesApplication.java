@@ -10,9 +10,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class IritmservicesApplication {
 	
 
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(IritmservicesApplication.class);
-	}
+	/*
+	 * protected SpringApplicationBuilder configure(SpringApplicationBuilder
+	 * application) { return application.sources(IritmservicesApplication.class); }
+	 */
 
 	public static void main(String[] args) {
 		SpringApplication.run(IritmservicesApplication.class, args);
